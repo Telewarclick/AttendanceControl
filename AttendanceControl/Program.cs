@@ -1,12 +1,21 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace AttendanceControl
+namespace DesignPatterns
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            // creation pattern lab 10
+            ICreator[] creators = { new HumanDepartmentCreator(), new GuardCreator(), new EmployeeCreator(), new InspectorCreator() };
+            foreach (ICreator creator in creators)
+            {
+                IPosition position = creator.FactoryMethod();
+                position.Greetings();
+            }
+
+            Console.Read();
         }
     }
 }
