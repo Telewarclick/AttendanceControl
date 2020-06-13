@@ -15,6 +15,11 @@ namespace DesignPatterns
                 position.Greetings();
             }
 
+
+            // structural pattern 11
+            Pass pass = new Adapter();
+            pass.ScreenSay();
+
             Console.Read();
         }
     }
