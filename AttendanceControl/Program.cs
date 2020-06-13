@@ -20,6 +20,17 @@ namespace DesignPatterns
             Pass pass = new Adapter();
             pass.ScreenSay();
 
+
+            // behaviour pattern Memento 12
+            Originator o = new Originator();
+            Caretaker c = new Caretaker();
+            o.State = "Ivanenko Stepan";
+            c.Memento = o.CreateMemento();
+            o.State = "Stepanenko Ivan";
+            c.Memento = o.CreateMemento();
+            o.State = "Vasylenko Olexandr";
+            o.SetMemento(c.Memento);
+
             Console.Read();
         }
     }
